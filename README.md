@@ -109,9 +109,8 @@ Checkout your internet connection or see how to run the library in offline mode 
 
 https://huggingface.co/OpenRLHF
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_name = "model_name"  # 替换为实际的模型名称，例如 "gpt2"
-model = AutoModelForCausalLM.from_pretrained(model_name)
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-
+https://huggingface.co/datasets/Open-Orca/OpenOrca
+https://huggingface.co/datasets/OpenRLHF/preference_dataset_mixture2_and_safe_pku
+https://huggingface.co/datasets/OpenRLHF/prompt-collection-v0.1
+https://huggingface.co/datasets/OpenRLHF/preference_700K
