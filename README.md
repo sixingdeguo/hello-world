@@ -1,6 +1,3 @@
-<img width="775" alt="企业微信截图_1722512220690" src="https://github.com/user-attachments/assets/e1d745f5-72d2-49bc-980f-fbc39c998f7f"># hello-world
-
-
 https://huggingface.co/OpenRLHF
 
 
