@@ -3,3 +3,5 @@ python -m torch.distributed.launch --nproc_per_node <单个实例上的进程数
 torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
     from openrlhf.datasets import RewardDataset
 ModuleNotFoundError: No module named 'openrlhf'
+
+`--address` is a required flag unless starting a head node with `--head`.
