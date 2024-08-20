@@ -95,3 +95,7 @@ Traceback (most recent call last):
   File "/opt/conda/lib/python3.10/zipfile.py", line 1943, in _fpclose
     fp.close()
 OSError: [Errno 28] No space left on device
+
+
+ --runtime-env-json='{"working_dir": "/vepfs/DI/user/zhaoyue/exp_result/ray_ppo_0820_dev"}' \
+
