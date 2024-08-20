@@ -5,3 +5,4 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 ModuleNotFoundError: No module named 'openrlhf'
 
 `--address` is a required flag unless starting a head node with `--head`.
+/opt/conda/bin/python3: Error while finding module specification for 'openrlhf.cli.train_ppo_ray' (ModuleNotFoundError: No module named 'openrlhf')
