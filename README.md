@@ -1,100 +1,38 @@
-python -m torch.distributed.launch --nproc_per_node <单个实例上的进程数> --master_addr $MLP_WORKER_0_HOST --node_rank $MLP_ROLE_INDEX --master_port $MLP_WORKER_0_PORT --nnodes $MLP_WORKER_NUM <代码文件的绝对路径>
-
-torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
-    from openrlhf.datasets import RewardDataset
-ModuleNotFoundError: No module named 'openrlhf'
-
-`--address` is a required flag unless starting a head node with `--head`.
-/opt/conda/bin/python3: Error while finding module specification for 'openrlhf.cli.train_ppo_ray' (ModuleNotFoundError: No module named 'openrlhf')
-
-Traceback (most recent call last):
-  File "/opt/conda/lib/python3.10/zipfile.py", line 1776, in write
-    shutil.copyfileobj(src, dest, 1024*8)
-  File "/opt/conda/lib/python3.10/shutil.py", line 198, in copyfileobj
-    fdst_write(buf)
-  File "/opt/conda/lib/python3.10/zipfile.py", line 1141, in write
-    self._fileobj.write(data)
-OSError: [Errno 28] No space left on device
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/opt/conda/lib/python3.10/site-packages/ray/_private/runtime_env/packaging.py", line 418, in _zip_directory
-    _dir_travel(dir_path, excludes, handler, logger=logger)
-  File "/opt/conda/lib/python3.10/site-packages/ray/_private/runtime_env/packaging.py", line 131, in _dir_travel
-    _dir_travel(sub_path, excludes, handler, logger=logger)
-  File "/opt/conda/lib/python3.10/site-packages/ray/_private/runtime_env/packaging.py", line 131, in _dir_travel
-    _dir_travel(sub_path, excludes, handler, logger=logger)
-  File "/opt/conda/lib/python3.10/site-packages/ray/_private/runtime_env/packaging.py", line 131, in _dir_travel
-    _dir_travel(sub_path, excludes, handler, logger=logger)
-  [Previous line repeated 1 more time]
-  File "/opt/conda/lib/python3.10/site-packages/ray/_private/runtime_env/packaging.py", line 128, in _dir_travel
-    raise e
-  File "/opt/conda/lib/python3.10/site-packages/ray/_private/runtime_env/packaging.py", line 125, in _dir_travel
-    handler(path)
-  File "/opt/conda/lib/python3.10/site-packages/ray/_private/runtime_env/packaging.py", line 415, in handler
-    zip_handler.write(path, to_path)
-  File "/opt/conda/lib/python3.10/zipfile.py", line 1775, in write
-    with open(filename, "rb") as src, self.open(zinfo, 'w') as dest:
-  File "/opt/conda/lib/python3.10/zipfile.py", line 1180, in close
-    self._fileobj.seek(self._zinfo.header_offset)
-OSError: [Errno 28] No space left on device
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/opt/conda/lib/python3.10/zipfile.py", line 1838, in close
-    self.fp.seek(self.start_dir)
-OSError: [Errno 28] No space left on device
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/opt/conda/bin/ray", line 8, in <module>
-    sys.exit(main())
-  File "/opt/conda/lib/python3.10/site-packages/ray/scripts/scripts.py", line 2612, in main
-    return cli()
-  File "/opt/conda/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
-    return self.main(*args, **kwargs)
-  File "/opt/conda/lib/python3.10/site-packages/click/core.py", line 1078, in main
-    rv = self.invoke(ctx)
-  File "/opt/conda/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-  File "/opt/conda/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-  File "/opt/conda/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/opt/conda/lib/python3.10/site-packages/click/core.py", line 783, in invoke
-    return __callback(*args, **kwargs)
-  File "/opt/conda/lib/python3.10/site-packages/ray/dashboard/modules/job/cli_utils.py", line 54, in wrapper
-    return func(*args, **kwargs)
-  File "/opt/conda/lib/python3.10/site-packages/ray/autoscaler/_private/cli_logger.py", line 856, in wrapper
-    return f(*args, **kwargs)
-  File "/opt/conda/lib/python3.10/site-packages/ray/dashboard/modules/job/cli.py", line 273, in submit
-    job_id = client.submit_job(
-  File "/opt/conda/lib/python3.10/site-packages/ray/dashboard/modules/job/sdk.py", line 214, in submit_job
-    self._upload_working_dir_if_needed(runtime_env)
-  File "/opt/conda/lib/python3.10/site-packages/ray/dashboard/modules/dashboard_sdk.py", line 398, in _upload_working_dir_if_needed
-    upload_working_dir_if_needed(runtime_env, upload_fn=_upload_fn)
-  File "/opt/conda/lib/python3.10/site-packages/ray/_private/runtime_env/working_dir.py", line 98, in upload_working_dir_if_needed
-    upload_fn(working_dir, excludes=excludes)
-  File "/opt/conda/lib/python3.10/site-packages/ray/dashboard/modules/dashboard_sdk.py", line 391, in _upload_fn
-    self._upload_package_if_needed(
-  File "/opt/conda/lib/python3.10/site-packages/ray/dashboard/modules/dashboard_sdk.py", line 377, in _upload_package_if_needed
-    self._upload_package(
-  File "/opt/conda/lib/python3.10/site-packages/ray/dashboard/modules/dashboard_sdk.py", line 345, in _upload_package
-    create_package(
-  File "/opt/conda/lib/python3.10/site-packages/ray/_private/runtime_env/packaging.py", line 531, in create_package
-    _zip_directory(
-  File "/opt/conda/lib/python3.10/site-packages/ray/_private/runtime_env/packaging.py", line 396, in _zip_directory
-    with ZipFile(pkg_file, "w") as zip_handler:
-  File "/opt/conda/lib/python3.10/zipfile.py", line 1312, in __exit__
-    self.close()
-  File "/opt/conda/lib/python3.10/zipfile.py", line 1843, in close
-    self._fpclose(fp)
-  File "/opt/conda/lib/python3.10/zipfile.py", line 1943, in _fpclose
-    fp.close()
-OSError: [Errno 28] No space left on device
-
-
-https://docs.ray.io/en/latest/cluster/running-applications/job-submission/index.html
+nohup: ignoring input
+2024-08-21 10:51:26,996	INFO dashboard_sdk.py:338 -- Uploading package gcs://_ray_pkg_8ea6db8336ab93a9.zip.
+2024-08-21 10:51:26,996	INFO packaging.py:530 -- Creating a file package for local directory '/vepfs/DI/user/zhaoyue/openRLHF/'.
+2024-08-21 10:51:26,874	INFO cli.py:36 -- [37mJob submission server address[39m: [1mhttp://127.0.0.1:8265[22m
+2024-08-21 10:51:27,072	SUCC cli.py:60 -- [32m-------------------------------------------------------[39m
+2024-08-21 10:51:27,072	SUCC cli.py:61 -- [32mJob 'raysubmit_AUsan4rdgQPB1615' submitted successfully[39m
+2024-08-21 10:51:27,072	SUCC cli.py:62 -- [32m-------------------------------------------------------[39m
+2024-08-21 10:51:27,072	INFO cli.py:286 -- [36mNext steps[39m
+2024-08-21 10:51:27,072	INFO cli.py:287 -- Query the logs of the job:
+2024-08-21 10:51:27,073	INFO cli.py:289 -- [1mray job logs raysubmit_AUsan4rdgQPB1615[22m
+2024-08-21 10:51:27,073	INFO cli.py:291 -- Query the status of the job:
+2024-08-21 10:51:27,073	INFO cli.py:293 -- [1mray job status raysubmit_AUsan4rdgQPB1615[22m
+2024-08-21 10:51:27,073	INFO cli.py:295 -- Request the job to be stopped:
+2024-08-21 10:51:27,073	INFO cli.py:297 -- [1mray job stop raysubmit_AUsan4rdgQPB1615[22m
+2024-08-21 10:51:27,075	INFO cli.py:304 -- Tailing logs until the job exits (disable with --no-wait):
+[2024-08-21 10:51:30,203] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.1
+[93m [WARNING] [0m using untested triton version (2.1.0), only 1.0.0 is known to be compatible
+/opt/conda/lib/python3.10/site-packages/transformers/deepspeed.py:24: FutureWarning: transformers.deepspeed module is deprecated and will be removed in a future version. Please import deepspeed modules directly from transformers.integrations
+  warnings.warn(
+2024-08-21 10:51:32,553	INFO worker.py:1429 -- Using address 10.132.206.205:6379 set in the environment variable RAY_ADDRESS
+2024-08-21 10:51:32,553	INFO worker.py:1564 -- Connecting to existing Ray cluster at address: 10.132.206.205:6379...
+2024-08-21 10:51:32,559	INFO worker.py:1740 -- Connected to Ray cluster. View the dashboard at [1m[32m127.0.0.1:8265 [39m[22m
+[36m(pid=41311)[0m [2024-08-21 10:51:36,105] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[36m(pid=41311)[0m [93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[36m(pid=41311)[0m [93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[36m(pid=41311)[0m [93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[36m(pid=41311)[0m [93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[36m(pid=41311)[0m [93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.1
+[36m(pid=41311)[0m [93m [WARNING] [0m using untested triton version (2.1.0), only 1.0.0 is known to be compatible
+[36m(pid=41311)[0m /opt/conda/lib/python3.10/site-packages/transformers/deepspeed.py:24: FutureWarning: transformers.deepspeed module is deprecated and will be removed in a future version. Please import deepspeed modules directly from transformers.integrations
+[36m(pid=41311)[0m   warnings.warn(
+2024-08-21 11:09:52,197	INFO cli.py:86 -- Status for job 'raysubmit_AUsan4rdgQPB1615': RUNNING
+2024-08-21 11:09:52,197	INFO cli.py:88 -- Status message: Job is currently running.
