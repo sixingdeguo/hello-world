@@ -97,5 +97,4 @@ Traceback (most recent call last):
 OSError: [Errno 28] No space left on device
 
 
- --runtime-env-json='{"working_dir": "/vepfs/DI/user/zhaoyue/exp_result/ray_ppo_0820_dev"}' \
-
+https://docs.ray.io/en/latest/cluster/running-applications/job-submission/index.html
