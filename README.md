@@ -13,3 +13,13 @@
         # wait
         if self.critic_train_remote:
             ray.get(ref)
+
+
+    
+    # load checkpoint
+    self.consumed_samples = 0
+    ckpt_path = os.path.join(args.ckpt_path, "_actor")
+    if args.load_checkpoint and os.path.exists(ckpt_path):
+        _, states = strategy.load_ckpt(self.actor.model, ckpt_path)
+        self.consumed_samples = states["consumed_samples"]
+        strategy.print(f"Loaded the checkpoint: {ckpt_path}, consumed_samples: {self.consumed_samples}")
