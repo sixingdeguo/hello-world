@@ -1,2 +1,32 @@
- Namespace(host='0.0.0.0', port=8505, uvicorn_log_level='info', allow_credentials=False, allowed_origins=['*'], allowed_methods=['*'], allowed_headers=['*'], api_key='EMPTY', served_model_name=['Qwen2-1.5B'], lora_modules=None, chat_template=None, response_role='assistant', ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, ssl_cert_reqs=0, root_path=None, middleware=[], model='/vepfs/DI/beijing-public/models/Qwen2-1.5B', tokenizer='/vepfs/DI/beijing-public/models/Qwen2-1.5B', skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', trust_remote_code=False, download_dir=None, load_format='auto', dtype='bfloat16', kv_cache_dtype='auto', quantization_param_path=None, max_model_len=1024, guided_decoding_backend='outlines', worker_use_ray=False, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, ray_workers_use_nsight=False, block_size=16, enable_prefix_caching=False, use_v2_block_manager=False, num_lookahead_slots=0, seed=0, swap_space=10, gpu_memory_utilization=0.25, num_gpu_blocks_override=None, max_num_batched_tokens=None, max_num_seqs=1024, max_logprobs=5, disable_log_stats=False, quantization=None, enforce_eager=True, max_context_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, enable_lora=False, max_loras=1, max_lora_rank=16, lora_extra_vocab_size=256, lora_dtype='auto', max_cpu_loras=None, device='auto', image_input_type=None, image_token_id=None, image_input_shape=None, image_feature_size=None, scheduler_delay_factor=0.0, enable_chunked_prefill=False, speculative_model=None, num_speculative_tokens=None, speculative_max_model_len=None, model_loader_extra_config=None, engine_use_ray=False, disable_log_requests=False, max_log_len=None)
-INFO 09-12 01:35:07 llm_engine.py:98] Initializing an LLM engine (v0.4.1) with config: model='/vepfs/DI/beijing-public/models/Qwen2-1.5B', speculative_config=None, tokenizer='/vepfs/DI/beijing-public/models/Qwen2-1.5B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=1024, download_dir=None, load_format=auto, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0)
+import requests
+
+# 设置服务的地址和端口
+url = "http://0.0.0.0:8505/v1/chat/completions"
+
+# 定义请求的头信息（可选）
+headers = {
+    "Authorization": "Bearer EMPTY",  # 使用实际的 API 密钥替换 EMPTY
+    "Content-Type": "application/json"
+}
+
+# 定义请求的 JSON 数据
+data = {
+    "model": "Qwen2-1.5B",  # 使用您服务中使用的模型名
+    "messages": [
+        {
+            "role": "user",
+            "content": "Hello, how can I use this service?"
+        }
+    ],
+    "max_tokens": 150  # 生成的最大 token 数量
+}
+
+# 发送 POST 请求
+response = requests.post(url, headers=headers, json=data)
+
+# 检查响应状态码
+if response.status_code == 200:
+    # 打印响应内容
+    print("Response:", response.json())
+else:
+    print("Error:", response.status_code, response.text)
