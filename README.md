@@ -1,5 +1,6 @@
-class ChatRole(enum.StrEnum):
-    SYSTEM = enum.auto()
-    HUMAN = enum.auto()
-    AI = enum.auto()
-    EXTRA = enum.auto()
+@unique
+class ChatRole(str, Enum):
+    SYSTEM = "SYSTEM"
+    HUMAN = "HUMAN"
+    AI = "AI"
+    EXTRA = "EXTRA"
