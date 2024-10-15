@@ -1,16 +1,25 @@
 import json
+import csv
 
-def extract_first_sentences(file_path):
-    # 打开并读取JSON文件
-    with open(file_path, 'r', encoding='utf-8') as file:
-        for line in file:
-            # 加载每一行的 JSON 数据
-            debate_data = json.loads(line)
-            # 检查 messages 键是否存在
-            if 'messages' in debate_data:
-                first_message = debate_data['messages'][1]  # 通常第一句对话是第二条信息，跳过 system 信息
-                first_sentence = first_message['content'].split('.')[0] + '.'
-                print(f"角色: {first_message['role']}，第一句对话: {first_sentence}")
+# 读取 JSON 文件
+with open('res.json', 'r') as json_file:
+    data = json.load(json_file)
 
-# 调用函数，传入你的 JSON 文件路径
-extract_first_sentences('path_to_your_file.json')
+# 打开一个 CSV 文件用于写入
+with open('output.csv', 'w', newline='') as csv_file:
+    writer = csv.writer(csv_file)
+
+    # 写入 CSV 表头
+    header = ['index_id', 'a', 'b']
+    writer.writerow(header)
+
+    # 遍历 JSON 中的每条记录并写入 CSV
+    for entry in data:
+        index_id = entry['index_id']
+        a_values = entry['a']
+        b_values = entry['b']
+
+        # 写入行数据
+        writer.writerow([index_id, a_values, b_values])
+
+print("Conversion complete!")
