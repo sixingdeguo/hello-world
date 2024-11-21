@@ -1,57 +1,64 @@
-Found path: /home/geely-wubantu/code/virtualhome-master/virtualhome/simulation/unity_simulator/linux_exec.v2.2.4.x86_64
-Can't get home directory! 
-(Filename:  Line: 409)
+[post_command] Sending request to http://127.0.0.1:8080 with data: {'id': '1732181498.768338', 'action': 'idle'}
+[post_command] RequestException occurred: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2cbc879b40>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
 
-Mono path[0] = '/home/geely-wubantu/code/virtualhome-master/virtualhome/simulation/unity_simulator/linux_exec.v2.2.4_Data/Managed'
-Mono config path = '/home/geely-wubantu/code/virtualhome-master/virtualhome/simulation/unity_simulator/linux_exec.v2.2.4_Data/MonoBleedingEdge/etc'
-Display 0 'TS24q-30 24"': 2560x1440 (primary device).
-Can't get home directory! 
-(Filename:  Line: 409)
+The above exception was the direct cause of the following exception:
 
-Unable to load player prefs
-Can't get home directory! 
-(Filename:  Line: 409)
+Traceback (most recent call last):
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f2cbc879b40>: Failed to establish a new connection: [Errno 111] Connection refused
 
-Unable to synchronize player prefs
-Desktop is 2560 x 1440 @ 60 Hz
-Initialize engine version: 2019.4.28f1 (1381962e9d08)
-[Subsystems] Discovering subsystems at path /home/geely-wubantu/code/virtualhome-master/virtualhome/simulation/unity_simulator/linux_exec.v2.2.4_Data/UnitySubsystems
-GfxDevice: creating device client; threaded=0
-Renderer: NV136
-Vendor:   nouveau
-Version:  4.3 (Core Profile) Mesa 21.2.6
-GLES:     0
- GL_AMD_conservative_depth GL_AMD_draw_buffers_blend GL_AMD_gpu_shader_int64 GL_AMD_multi_draw_indirect GL_AMD_query_buffer_object GL_AMD_seamless_cubemap_per_texture GL_AMD_shader_trinary_minmax GL_AMD_texture_texture4 GL_AMD_vertex_shader_layer GL_AMD_vertex_shader_viewport_index GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ARB_ES2_compatibility GL_ARB_ES3_1_compatibility GL_ARB_ES3_2_compatibility GL_ARB_ES3_compatibility GL_ARB_arrays_of_arrays GL_ARB_base_instance GL_ARB_bindless_texture GL_ARB_blend_func_extended GL_ARB_buffer_storage GL_ARB_clear_buffer_object GL_ARB_clear_texture GL_ARB_clip_control GL_ARB_color_buffer_float GL_ARB_compressed_texture_pixel_storage GL_ARB_compute_shader GL_ARB_compute_variable_group_size GL_ARB_conditional_render_inverted GL_ARB_conservative_depth GL_ARB_copy_buffer GL_ARB_copy_image GL_ARB_cull_distance GL_ARB_debug_output GL_ARB_depth_buffer_float GL_ARB_depth_clamp GL_ARB_derivative_control GL_ARB_direct_state_access GL_ARB_draw_buffers GL
-_ARB_draw_buffers_blend GL_ARB_draw_elements_base_vertex GL_ARB_draw_indirect GL_ARB_draw_instanced GL_ARB_enhanced_layouts GL_ARB_explicit_attrib_location GL_ARB_explicit_uniform_location GL_ARB_fragment_coord_conventions GL_ARB_fragment_layer_viewport GL_ARB_fragment_shader GL_ARB_framebuffer_no_attachments GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_get_program_binary GL_ARB_get_texture_sub_image GL_ARB_gpu_shader5 GL_ARB_gpu_shader_fp64 GL_ARB_gpu_shader_int64 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_indirect_parameters GL_ARB_instanced_arrays GL_ARB_internalformat_query GL_ARB_internalformat_query2 GL_ARB_invalidate_subdata GL_ARB_map_buffer_alignment GL_ARB_map_buffer_range GL_ARB_multi_bind GL_ARB_multi_draw_indirect GL_ARB_occlusion_query2 GL_ARB_parallel_shader_compile GL_ARB_pipeline_statistics_query GL_ARB_pixel_buffer_object GL_ARB_point_sprite GL_ARB_polygon_offset_clamp GL_ARB_post_depth_coverage GL_ARB_program_interface_query GL_ARB_provoking_vertex GL_ARB_query_buf
-fer_object GL_ARB_robust_buffer_access_behavior GL_ARB_robustness GL_ARB_sample_locations GL_ARB_sample_shading GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_seamless_cubemap_per_texture GL_ARB_separate_shader_objects GL_ARB_shader_atomic_counter_ops GL_ARB_shader_atomic_counters GL_ARB_shader_ballot GL_ARB_shader_bit_encoding GL_ARB_shader_clock GL_ARB_shader_draw_parameters GL_ARB_shader_group_vote GL_ARB_shader_image_load_store GL_ARB_shader_image_size GL_ARB_shader_objects GL_ARB_shader_precision GL_ARB_shader_storage_buffer_object GL_ARB_shader_subroutine GL_ARB_shader_texture_image_samples GL_ARB_shader_texture_lod GL_ARB_shader_viewport_layer_array GL_ARB_shading_language_420pack GL_ARB_shading_language_include GL_ARB_shading_language_packing GL_ARB_stencil_texturing GL_ARB_sync GL_ARB_tessellation_shader GL_ARB_texture_barrier GL_ARB_texture_buffer_object GL_ARB_texture_buffer_object_rgb32 GL_ARB_texture_buffer_range GL_ARB_texture_compression_bptc GL_ARB_texture_compression_rgtc GL_ARB_text
-ure_cube_map_array GL_ARB_texture_filter_anisotropic GL_ARB_texture_filter_minmax GL_ARB_texture_float GL_ARB_texture_gather GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_multisample GL_ARB_texture_non_power_of_two GL_ARB_texture_query_levels GL_ARB_texture_query_lod GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_texture_rgb10_a2ui GL_ARB_texture_stencil8 GL_ARB_texture_storage GL_ARB_texture_storage_multisample GL_ARB_texture_swizzle GL_ARB_texture_view GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ARB_transform_feedback_instanced GL_ARB_transform_feedback_overflow_query GL_ARB_uniform_buffer_object GL_ARB_vertex_array_bgra GL_ARB_vertex_array_object GL_ARB_vertex_attrib_64bit GL_ARB_vertex_attrib_binding GL_ARB_vertex_buffer_object GL_ARB_vertex_shader GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_vertex_type_2_10_10_10_rev GL_ARB_viewport_array GL_ATI_blend_equation_separate GL_ATI_texture_float GL_ATI_texture_mirror_once GL_EXT_EGL_image_storage GL_EXT_EGL_sync GL_EXT_ab
-gr GL_EXT_blend_equation_separate GL_EXT_demote_to_helper_invocation GL_EXT_depth_bounds_test GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_pixel_buffer_object GL_EXT_polygon_offset_clamp GL_EXT_provoking_vertex GL_EXT_shader_image_load_store GL_EXT_shader_integer_mix GL_EXT_texture_array GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_filter_anisotropic GL_EXT_texture_filter_minmax GL_EXT_texture_integer GL_EXT_texture_mirror_clamp GL_EXT_texture_sRGB GL_EXT_texture_sRGB_decode GL_EXT_texture_shadow_lod GL_EXT_texture_shared_exponent GL_EXT_texture_snorm GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_transform_feedback GL_EXT_vertex_array_bgra GL_EXT_vertex_attrib_64bit GL_EXT_window_rectangles GL_IBM_multimode_draw_arrays GL_KHR_blend_equation_ad
-vanced GL_KHR_context_flush_control GL_KHR_debug GL_KHR_no_error GL_KHR_parallel_shader_compile GL_KHR_robust_buffer_access_behavior GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_sliced_3d GL_MESA_framebuffer_flip_y GL_MESA_pack_invert GL_MESA_shader_integer_functions GL_MESA_texture_signed_rgba GL_NV_conditional_render GL_NV_conservative_raster GL_NV_conservative_raster_dilate GL_NV_conservative_raster_pre_snap_triangles GL_NV_copy_image GL_NV_depth_clamp GL_NV_fill_rectangle GL_NV_packed_depth_stencil GL_NV_sample_locations GL_NV_texture_barrier GL_NV_vdpau_interop GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_OES_EGL_image GL_S3_s3tc
-OPENGL LOG: Creating OpenGL 4.3 graphics device ; Context level  <OpenGL 4.3> ; Context handle 27780704
-Caught fatal signal - signo:11 code:1 errno:0 addr:0x13
-Obtained 25 stack frames.
-#0  0x007fcd2b33a420 in funlockfile
-#1  0x007fcd2bf2e048 in AtomicStack::Pop()
-#2  0x007fcd2bc57b74 in BucketAllocator::Allocate(unsigned long, int)
-#3  0x007fcd2bc5817d in DualThreadAllocator<DynamicHeapAllocator>::Allocate(unsigned long, int)
-#4  0x007fcd2bc5410e in MemoryManager::Allocate(unsigned long, unsigned long, MemLabelId, AllocateOptions, char const*, int)
-#5  0x007fcd2bc53ed1 in malloc_internal(unsigned long, unsigned long, MemLabelId, AllocateOptions, char const*, int)
-#6  0x007fcd2c8eb6f5 in FMOD::MemPool::alloc(int, char const*, int, unsigned int, bool)
-#7  0x007fcd2c9118cb in FMOD::OutputALSA::addALSADriver(char const*)
-#8  0x007fcd2c911c1e in FMOD::OutputALSA::getALSANameHintDrivers()
-#9  0x007fcd2c911d98 in FMOD::OutputALSA::enumerate()
-#10 0x007fcd2c911f34 in FMOD::OutputALSA::init(int, unsigned int, int*, int, FMOD_SOUND_FORMAT*, int, int, void*)
-#11 0x007fcd2c902c78 in FMOD::SystemI::init(int, unsigned int, void*)
-#12 0x007fcd2c8f802e in FMOD::System::init(int, unsigned int, void*)
-#13 0x007fcd2bab0400 in AudioManager::InitNormal(bool, FMOD_OUTPUTTYPE)
-#14 0x007fcd2baaf60b in AudioManager::InitFMOD(FMOD_OUTPUTTYPE)
-#15 0x007fcd2bab26ca in AudioManager::AwakeFromLoad(AwakeFromLoadMode)
-#16 0x007fcd2c0222c9 in AwakeFromLoadQueue::InvokePersistentManagerAwake(AwakeFromLoadQueue::Item*, unsigned int, AwakeFromLoadMode)
-#17 0x007fcd2c021bf0 in AwakeFromLoadQueue::PersistentManagerAwakeFromLoad()
-#18 0x007fcd2c00ee03 in PersistentManager::LoadAndIntegrateAllPreallocatedObjects(PersistentManager::LockFlags)
-#19 0x007fcd2c00f41b in PersistentManager::ReadObject(int, AwakeFromLoadMode)
-#20 0x007fcd2bc670f1 in PlayerLoadGlobalManagers(char const*, char const*, unsigned int)
-#21 0x007fcd2be98c11 in PlayerInitEngineGraphics(bool)
-#22 0x007fcd2c030dd6 in PlayerMain(int, char**)
-#23 0x007fcd2b158083 in __libc_start_main
-#24 0x00000000400569 in _start
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+  [Previous line repeated 2 more times]
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2cbc879b40>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geely-wubantu/code/virtualhome-master/virtualhome/simulation/environment/../unity_simulator/comm_unity.py", line 91, in post_command
+    resp = self.requests_retry_session().post(self._address, json=request_dict)
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/geely-wubantu/anaconda3/envs/twosome/lib/python3.10/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2cbc879b40>: Failed to establish a new connection: [Errno 111] Connection refused'))
